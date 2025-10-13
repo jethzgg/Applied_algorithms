@@ -1,9 +1,12 @@
 #include <bits/stdc++.h>
-
+#define min(a,b) (a < b) ? a : b
 using namespace std;
 
 int main()
 {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
     int n;
     cin >> n;
     vector<int> a(n);
@@ -38,7 +41,7 @@ int main()
         int b, c;
         cin >> b >> c;
         int k = __lg(c - b + 1);
-        sum += __min(a[sparse[b][k]], a[sparse[c + 1 - (1 << k)][k]]);
+        sum += min(a[sparse[b][k]], a[sparse[c + 1 - (1 << k)][k]]);
     }
     cout << sum << endl;
     return 0;
