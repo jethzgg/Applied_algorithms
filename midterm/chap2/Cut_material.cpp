@@ -64,6 +64,10 @@ int backtrack(int k)
 
 int main()
 {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    
     cin >> H >> W;
     cin >> n;
     int area = 0;

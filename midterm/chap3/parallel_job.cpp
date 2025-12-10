@@ -11,6 +11,10 @@ int T = 0, timepoint = 0;
 
 int main()
 {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    
     cin >> n;
     for (int i = 0; i < n; i++)
     {

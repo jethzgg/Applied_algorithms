@@ -48,6 +48,10 @@ void backtrack(int task)
 
 int main()
 {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    
     cin >> m >> n >> D; 
     for (int i = 0; i < m; i++)
     {
