@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#define MAX 100000
+
+using namespace std;
+
+int n, m;
+vector<int> A, B;
+map<int, int> c;
+int cnt = 0;
+
+int main()
+{
+    cin >> n >> m;
+    A.resize(n, 0);
+    B.resize(m, 0);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> A[i];
+        c[A[i]]++;
+    }
+    for (int i = 0; i < m; i++)
+    {
+        cin >> B[i];
+        if (c[B[i]] != 0)
+        {
+            c[B[i]]--;
+            cnt++;
+        }
+    }
+    cout << cnt << "\n";
+    return 0;
+}
