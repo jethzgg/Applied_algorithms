@@ -6,17 +6,17 @@
 
 using namespace std;
 
-int n, m;
-vector<int> A, B;
-map<int, int> c;
-int cnt = 0;
-
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
-    
+
+    int n, m;
+    vector<int> A, B;
+    map<int, int> c;
+    int cnt = 0;
+
     cin >> n >> m;
     A.resize(n, 0);
     B.resize(m, 0);

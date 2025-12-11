@@ -5,15 +5,15 @@
 
 using namespace std;
 
-int n, X;
-vector<int> d;
-vector<vector<int>> amount;
-
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
+    
+    int n, X;
+    vector<int> d;
+    vector<vector<int>> amount;
     
     cin >> n >> X;
     d.resize(n, 0);

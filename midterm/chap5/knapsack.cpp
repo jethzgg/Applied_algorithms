@@ -4,15 +4,15 @@
 
 using namespace std;
 
-int n, B;
-vector<int> w, v;
-vector<vector<int>> profits;
-
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
+
+    int n, B;
+    vector<int> w, v;
+    vector<vector<int>> profits;
 
     cin >> n >> B;
 
