@@ -14,6 +14,8 @@ vector<int> onStack;
 
 int current_num = 0, cnt = 0;
 
+vector<vector<int>> res;
+
 void dfs(int u)
 {
     current_num++;
@@ -36,14 +38,19 @@ void dfs(int u)
     if (low[u] == num[u])
     {
         cnt++;
+        vector<int> res1;
         while (!SCC.empty())
         {
             int v = SCC.top();
             SCC.pop();
             onStack[v] = false;
+
+            res1.push_back(v);
             //cout << v << " "
             if (v == u) 
             {
+                sort(res1.begin(), res1.end());
+                res.push_back(res1);
                 //cout << "\n";
                 break;
             }
@@ -70,5 +77,15 @@ int main()
         }
     }
     cout << cnt << "\n";
+
+    sort(res.begin(), res.end());
+    for (auto i : res)
+    {
+        for (auto j : i)
+        {
+            cout << j << " ";
+        }
+        cout << "\n";
+    }
     return 0;
 }
