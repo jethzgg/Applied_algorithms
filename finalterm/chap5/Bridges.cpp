@@ -9,6 +9,7 @@ vector<vector<int>> adj;
 vector<int> num;
 vector<int> low;
 vector<int> articulations;
+vector<pair<int, int>> bridges;
 
 int current_num = 0;
 
@@ -26,6 +27,7 @@ void dfs(int u, int parent)
             dfs(v, u);
             low[u] = min(low[u], low[v]);
             childs++;
+            if (low[v] > num[u]) bridges.push_back(make_pair(u, v));
             if (parent != 0 && low[v] >= num[u] && 
                 find(articulations.begin(), articulations.end(), u) == articulations.end())
             {
@@ -64,17 +66,6 @@ int main()
         if (num[i] == 0) dfs(i, 0);
     }
 
-    sort(articulations.begin(), articulations.end());
-
-    if (articulations.empty()) cout << -1 << "\n";
-    else
-    {
-        for (auto i : articulations)
-        {
-            cout << i << " ";
-        }
-
-        cout << "\n";
-    }
+    cout << articulations.size() << " " << bridges.size() << "\n";
     return 0;
 }
