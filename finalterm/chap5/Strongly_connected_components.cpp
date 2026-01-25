@@ -46,12 +46,12 @@ void dfs(int u)
             onStack[v] = false;
 
             res1.push_back(v);
-            //cout << v << " ";
+            // cout << v << " ";
             if (v == u) 
             {
                 sort(res1.begin(), res1.end());
                 res.push_back(res1);
-                //cout << "\n";
+                // cout << "\n";
                 break;
             }
         }
