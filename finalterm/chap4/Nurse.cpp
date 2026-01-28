@@ -16,7 +16,6 @@ int main()
     res[0][1] = 1;
     res[0][0] = 1;
     res[1][0] = 1;
-
     for (int i = k1 + 1; i <= n; i++)
     {
         res[0][i] = res[1][i - 1];

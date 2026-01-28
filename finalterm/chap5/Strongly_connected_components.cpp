@@ -11,11 +11,8 @@ vector<int> num;
 vector<int> low;
 stack<int> SCC;
 vector<int> onStack;
-
 int current_num = 0, cnt = 0;
-
 vector<vector<int>> res;
-
 void dfs(int u)
 {
     current_num++;

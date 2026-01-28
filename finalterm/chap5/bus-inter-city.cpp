@@ -11,25 +11,21 @@ vector<int> c, d, visited, dp;
 vector<vector<int>> adj;
 vector<long long> dis;
 vector<vector<pair<int, int>>> adj1;
-
 void bfs(int i, int limit)
 {
     fill(visited.begin(), visited.end(), 0);
     queue<pair<int, int>> q;
     q.push({i, 0});
     visited[i] = 1;
-    
     while (!q.empty())
     {
         int u = q.front().first;
         int depth = q.front().second;
         q.pop();
-        
         if (u != i)
         {
             adj1[i].push_back({u, c[i]});
         }
-        
         if (depth >= limit) continue;
         
         for (auto v : adj[u])
@@ -42,10 +38,11 @@ void bfs(int i, int limit)
         }
     }
 }
-
 void dijkstra(int s)
 {
-    priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<pair<long long, int>>> pq;
+    priority_queue<pair<long long, int>, 
+                        vector<pair<long long, int>>, 
+                            greater<pair<long long, int>>> pq;
     dis[s] = 0;
     pq.push({0, s});
 
@@ -58,11 +55,8 @@ void dijkstra(int s)
             pq.pop();
             if (!visited[u]) break;
         }
-
         if (u == -1 || dis[u] == INT_MAX) break;
-
         visited[u] = 1;
-
         for (auto edge : adj1[u])
         {
             int v = edge.first;
@@ -88,7 +82,6 @@ int main()
     adj.resize(n + 1, vector<int>());
     adj1.resize(n + 1, vector<pair<int, int>>());
     dis.resize(n + 1, INT_MAX);
-
     for (int i = 1; i <= n; i++)
     {
         cin >> c[i] >> d[i];

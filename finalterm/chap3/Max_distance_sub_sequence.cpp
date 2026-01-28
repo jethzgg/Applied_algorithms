@@ -7,7 +7,6 @@ using namespace std;
 
 int n, c, res;
 vector<int> a;
-
 int check(int d)
 {
     int last = 0;
@@ -26,7 +25,6 @@ int check(int d)
     }
     return 0;
 }
-
 void findD(int left, int right)
 {
     if (left <= right)

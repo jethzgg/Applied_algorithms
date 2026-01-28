@@ -5,11 +5,8 @@
 using namespace std;
 
 int n, M;
-vector<int> a;
-vector<int> prefix_sum;
-vector<int> solution;
+vector<int> a, prefix_sum, solution;
 int sum = 0, cnt = 0;
-
 void solve(int x)
 {
     if (solution[x] == 0)

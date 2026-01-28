@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    int n, min_even = 0, min_odd = INT_MAX;
+    int n;
     vector<int> a, prefix_sum, res;
 
     cin >> n;
@@ -15,6 +15,8 @@ int main()
     prefix_sum.resize(n + 1, 0);
     res.resize(n + 1, INT_MIN);
 
+
+    int min_even = 0, min_odd = INT_MAX;
     for (int i = 1; i <= n; i++)
     {
         cin >> a[i];

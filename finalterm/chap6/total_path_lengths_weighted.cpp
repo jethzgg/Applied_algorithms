@@ -21,7 +21,7 @@ void dfs(int u, int depth)
         int w = path.second;
         if (visited[v] == 0)
         {
-            dfs(v, depth + subtree_size[v] * w);
+            dfs(v, depth + subtree_size[v] * w); // or +1
             subtree_size[u] += subtree_size[v];
         }
     }

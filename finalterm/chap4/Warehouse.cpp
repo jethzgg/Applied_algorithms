@@ -20,11 +20,9 @@ int main()
     {
         cin >> t[i];
     }
-
     dp.resize(N + 1, vector<int>(T + 1, 0));
-
     for (int i = 1; i <= N; i++)
-    {
+    { //warehouse (conditional knapsack)
         for (int j = 1; j <= T; j++)
         {
             for (int d = 1; d <= D; d++)
@@ -33,7 +31,8 @@ int main()
                 {
                     if (j >= t[i])
                     {
-                        dp[i][j] = max(dp[i][j], dp[i - d][j - t[i]] + a[i]);
+                        dp[i][j] = max(dp[i][j], 
+                                dp[i - d][j - t[i]] + a[i]);
                     }
                 }
             }

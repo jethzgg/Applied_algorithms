@@ -10,9 +10,7 @@ vector<int> num;
 vector<int> low;
 vector<int> articulations;
 vector<pair<int, int>> bridges;
-
 int current_num = 0;
-
 void dfs(int u, int parent)
 {
     current_num++;

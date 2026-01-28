@@ -7,10 +7,8 @@ using namespace std;
 
 int n, k;
 vector<vector<int>> c;
-vector<int> visited;
-vector<int> path;
+vector<int> visited, path;
 int load = 0, cost = 0, MIN = INT_MAX, cmin = INT_MAX;
-
 int check(int i)
 {
     if (i <= n && visited[i] == 0 && load < k)
@@ -23,7 +21,6 @@ int check(int i)
     }
     return 0;
 }
-
 void travel(int step)
 {
     for (int i = 1; i <= 2 * n; i++)
@@ -52,7 +49,6 @@ void travel(int step)
         }
     }
 }
-
 int main()
 {
     cin >> n >> k;

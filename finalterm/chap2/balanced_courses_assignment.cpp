@@ -11,21 +11,22 @@ vector<vector<int>> course_lists;
 vector<vector<int>> conflicts;
 vector<int> assigns;
 vector<int> loads;
-
 int check(int course, int teacher)
 {
     if (assigns[course] != -1) 
         return 0;
-    if (find(course_lists[teacher].begin(), course_lists[teacher].end(), course) == course_lists[teacher].end())
+    if (find(course_lists[teacher].begin(), 
+            course_lists[teacher].end(), course) 
+            == course_lists[teacher].end())
         return 0;
     for (int i = 0; i < n; i++)
     {
-        if (assigns[i] == teacher && conflicts[i][course] == 1)
+        if (assigns[i] == teacher && 
+                conflicts[i][course] == 1)
             return 0;
     }
     return 1;
 }
-
 void assign(int course)
 {
     if (assigns[course] == -1)
@@ -38,11 +39,14 @@ void assign(int course)
                 loads[teacher]++;
                 if (course == (n - 1))
                 {
-                    MIN = min(MIN, *max_element(loads.begin(), loads.end()));
+                    MIN = min(MIN, 
+                            *max_element(loads.begin(), 
+                                            loads.end()));
                 }
                 else
                 {
-                    int MAX = *max_element(loads.begin(), loads.end());
+                    int MAX = *max_element(loads.begin(), 
+                                            loads.end());
                     if (MAX <= MIN) assign(course + 1);
                 }
                 loads[teacher]--;
@@ -51,7 +55,6 @@ void assign(int course)
         }
     }
 }
-
 int main()
 {
     cin >> m >> n;

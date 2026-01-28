@@ -14,7 +14,8 @@ int main()
     {
         cin >> sets[i][0] >> sets[i][1];
     }
-    sort(sets.begin(), sets.end(), [](vector<int>& a, vector<int>& b){
+    sort(sets.begin(), sets.end(), 
+        [](vector<int>& a, vector<int>& b){
         return (a[1] == b[1]) ? (a[0] < b[0]) : (a[1] < b[1]);
     }); 
     int end = sets[0][1];
